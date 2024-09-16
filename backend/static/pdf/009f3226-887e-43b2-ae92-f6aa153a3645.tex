@@ -1,0 +1,118 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{
+    left=1in,
+    right=1in,
+    top=1in,
+    bottom=1in
+}
+
+\begin{document}
+
+\section{Inverse Matrices}
+
+An \textit{inverse matrix} A is invertible if there is a matrix A' such that AA' = A'A = I.
+
+\subsection{Examples}
+
+\begin{align*}
+A &= \begin{bmatrix} 2 & 3 \\ 1 & 2 \end{bmatrix}, \quad B = \begin{bmatrix} 2 & -3 \\ -1 & 2 \end{bmatrix} \text{ are inverses} \\
+\text{Since } AB &= \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} = BA \text{ we can write B = A}^{-1}
+\end{align*}
+
+Not all matrices have inverses:
+\begin{align*}
+C &= \begin{bmatrix} 0 & 0 \\ 1 & 0 \end{bmatrix} \text{ has no inverse} \\
+\text{Since } AC &= \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix} \neq I
+\end{align*}
+
+\subsection{Connection to Linear Transformations}
+
+Let T be a linear transformation with associated matrix A (in T:A x V→W).
+The inverse of T is a linear transformation with associated matrix A' where A' = A\textsuperscript{-1}.
+
+\section{2x2 Inverse Formula}
+
+Let $A = \begin{bmatrix} a & b \\ c & d \end{bmatrix}$, then if ad-bc≠0:
+
+\[
+A^{-1} = \frac{1}{ad-bc} \begin{bmatrix} d & -b \\ -c & a \end{bmatrix}
+\]
+
+\textit{Check:} Show AA' = I and A'A = I
+
+There is a general nxn inverse formula (involving the determinant and adjugate matrix) but it's complicated to compute (we'll see this later).
+
+\subsection{Using Gauss-Jordan to Find the Inverse}
+
+Suppose A has inverse A'.
+Then AA' = I
+So A[I] = [A']
+
+To find A', we must solve the system Ax = e\textsubscript{i} for each column.
+
+Instead of solving [Ax\textsubscript{1}] = [e\textsubscript{1}], [Ax\textsubscript{2}] = [e\textsubscript{2}], ... individually, we can solve them all at once with Gauss-Jordan on the matrix [A|I].
+
+If A doesn't have n pivots (one in each row), then A' doesn't exist.
+If A has n pivots, then the algorithm produces A'.
+
+\subsection{Summary: Procedure to Find Inverse (if it exists)}
+
+\begin{itemize}
+    \item If A doesn't have n pivots, then A' doesn't exist
+    \item If A has n pivots, then the algorithm produces A'
+\end{itemize}
+
+\section{Example}
+
+Let $A = \begin{bmatrix} 2 & 1 & 3 \\ 0 & 1 & 4 \\ 1 & 0 & 1 \end{bmatrix}$. Find A\textsuperscript{-1}, if it exists.
+
+\begin{align*}
+\begin{bmatrix}
+2 & 1 & 3 & | & 1 & 0 & 0 \\
+0 & 1 & 4 & | & 0 & 1 & 0 \\
+1 & 0 & 1 & | & 0 & 0 & 1
+\end{bmatrix}
+&\xrightarrow{\text{R}_3 - \frac{1}{2}\text{R}_1}
+\begin{bmatrix}
+2 & 1 & 3 & | & 1 & 0 & 0 \\
+0 & 1 & 4 & | & 0 & 1 & 0 \\
+0 & -\frac{1}{2} & -\frac{1}{2} & | & -\frac{1}{2} & 0 & 1
+\end{bmatrix} \\
+&\xrightarrow{\text{R}_3 + \frac{1}{2}\text{R}_2}
+\begin{bmatrix}
+2 & 1 & 3 & | & 1 & 0 & 0 \\
+0 & 1 & 4 & | & 0 & 1 & 0 \\
+0 & 0 & \frac{3}{2} & | & -\frac{1}{2} & \frac{1}{2} & 1
+\end{bmatrix} \\
+&\xrightarrow{\text{R}_3 \cdot \frac{2}{3}}
+\begin{bmatrix}
+2 & 1 & 3 & | & 1 & 0 & 0 \\
+0 & 1 & 4 & | & 0 & 1 & 0 \\
+0 & 0 & 1 & | & -\frac{1}{3} & \frac{1}{3} & \frac{2}{3}
+\end{bmatrix} \\
+&\xrightarrow{\text{R}_2 - 4\text{R}_3}
+\begin{bmatrix}
+2 & 1 & 3 & | & 1 & 0 & 0 \\
+0 & 1 & 0 & | & \frac{4}{3} & -\frac{1}{3} & -\frac{8}{3} \\
+0 & 0 & 1 & | & -\frac{1}{3} & \frac{1}{3} & \frac{2}{3}
+\end{bmatrix} \\
+&\xrightarrow{\text{R}_1 - 3\text{R}_3}
+\begin{bmatrix}
+2 & 1 & 0 & | & 2 & -1 & -2 \\
+0 & 1 & 0 & | & \frac{4}{3} & -\frac{1}{3} & -\frac{8}{3} \\
+0 & 0 & 1 & | & -\frac{1}{3} & \frac{1}{3} & \frac{2}{3}
+\end{bmatrix} \\
+&\xrightarrow{\text{R}_1 - \text{R}_2}
+\begin{bmatrix}
+2 & 0 & 0 & | & \frac{2}{3} & -\frac{2}{3} & \frac{2}{3} \\
+0 & 1 & 0 & | & \frac{4}{3} & -\frac{1}{3} & -\frac{8}{3} \\
+0 & 0 & 1 & | & -\frac{1}{3} & \frac{1}{3} & \frac{2}{3}
+\end{bmatrix} \\
+&\xrightarrow{\text{R}_1 \cdot \frac{1}{2}}
+\begin{bmatrix}
+1 & 0 & 0 & | & \frac{1}{3} & -\frac{1}{3} & \frac{1}{3} \\
+0 & 1 & 0 & | & \frac{4}{3} & -\frac{1}{3} & -\frac{8}{3} 

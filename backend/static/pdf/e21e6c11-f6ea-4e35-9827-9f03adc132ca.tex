@@ -1,0 +1,84 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[margin=1in]{geometry}
+
+\begin{document}
+
+\section{Sets}
+
+\subsection{Basic Definitions}
+
+$\mathbb{N} = \{0,1,2,\ldots\}$ - natural numbers
+
+$\mathbb{Z} = \{\ldots,-1,0,1,\ldots\}$ - integers
+
+$\mathbb{Q} = \{\frac{a}{b} : a,b \in \mathbb{Z}, b \neq 0\}$ - rationals
+
+$\mathbb{R}$ - real numbers
+
+$\mathbb{C} = \{a+bi : a,b \in \mathbb{R}\}$ - complex numbers
+
+$i^2 = -1$ (imaginary unit)
+
+$\mathbb{R}^n = \{(x_1,\ldots,x_n) : x_i \in \mathbb{R}\}$ - $n$-dimensional space
+
+$\mathbb{R}^\infty = \{(x_1,x_2,\ldots) : x_i \in \mathbb{R}\}$ - space of infinite sequences of reals
+
+\subsection{Set Operations}
+
+\textit{Union}: $A \cup B = \{x : x \in A \text{ or } x \in B\}$
+
+\textit{Intersection}: $A \cap B = \{x : x \in A \text{ and } x \in B\}$
+
+\textit{Difference}: $A \setminus B = \{x \in A : x \notin B\}$
+
+\textit{Symmetric difference}: $(A \setminus B) \cup (B \setminus A)$
+
+\subsection{Examples}
+
+Let $\{a_n\}_{n \in \mathbb{N}}$ be an indexed family of sets (for $n \in \mathbb{N}$).
+
+\begin{align*}
+\bigcup_{n \in \mathbb{N}} A_n &= \{x : x \in A_n \text{ for some } n \in \mathbb{N}\} \\
+\bigcap_{n \in \mathbb{N}} A_n &= \{x : x \in A_n \text{ for every } n \in \mathbb{N}\}
+\end{align*}
+
+\textit{Note}: If $\exists n_0 \in \mathbb{N} : A_n = \emptyset$ (empty set), then $\bigcap_{n \in \mathbb{N}} A_n = \emptyset$.
+
+\subsection{Functions}
+
+A \textit{function} is a mapping or transformation.
+
+Let $A, B$ be sets. $A \xrightarrow{f} B$
+
+$f : A \to B$ is a rule that assigns to each $a \in A$ a unique $b \in B$.
+
+$\Delta$ is called the \textit{domain} (by definition) of $f$.
+
+$B$ is called the \textit{codomain} or \textit{target space} of $f$.
+
+\subsection{Image and Preimage}
+
+If $A' \subset A$, then the \textit{image} of $A'$ under $f$ is:
+
+\[f(A') = \{f(x) : x \in A'\}\]
+
+This is called the \textit{restriction} of $f$ to $A'$ (denoted by $f|_{A'}$).
+
+If $B' \subset B$, then the \textit{preimage} of $B'$ under $f$ is:
+
+\[f^{-1}(B') = \{x \in A : f(x) \in B'\}\]
+
+\subsection{Examples}
+
+\begin{enumerate}
+    \item $f : \mathbb{R} \to \mathbb{R}$, $x \mapsto x^2$
+    \item $f : \mathbb{R}^+ \to \mathbb{R}$, $x \mapsto \log x$
+    \item $g : \mathbb{R} \to \mathbb{R}$, $x \mapsto e^x$
+    \item $h : \mathbb{R} \to \mathbb{R}$, $x \mapsto \sin x$
+    \item $f : \mathbb{C} \to \mathbb{C}$, $z \mapsto z^2$
+    \item $D : C^\infty(\mathbb{R}) \to C^\infty(\mathbb{R})$, $f \mapsto f'$ (derivative)
+\end{enumerate}
+
+\end{document}

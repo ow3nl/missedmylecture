@@ -1,0 +1,84 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+
+\section{Sets and Number Systems}
+
+\subsection{Definitions}
+
+$\mathbb{N} = \{0, 1, 2, \ldots\}$ : natural numbers
+
+$\mathbb{Z} = \{\ldots, -1, 0, 1, \ldots\}$ : integers
+
+$\mathbb{Q} = \{\frac{p}{q} : p, q \in \mathbb{Z}, q \neq 0\}$ : rationals
+
+$\mathbb{R}$ : real numbers
+
+$\mathbb{C} = \{a + bi : a, b \in \mathbb{R}\}$ : complex numbers
+
+$i^2 = -1$ (imaginary unit)
+
+$\mathbb{R}^n = \{(x_1, \ldots, x_n) : x_i \in \mathbb{R}\}$ : \textit{n-dimensional space}
+
+$\mathbb{R}^+ = \{x \in \mathbb{R} : x > 0\}$ : positive real numbers
+
+\subsection{Set Operations}
+
+$A \cup B = \{x : x \in A \text{ or } x \in B\}$ : union
+
+$A \cap B = \{x : x \in A \text{ and } x \in B\}$ : intersection
+
+$A \setminus B = \{x \in A : x \notin B\}$ : \textit{set difference}
+
+$A \oplus B = (A \cup B) \setminus (A \cap B)$ : \textit{symmetric difference}
+
+\subsection{Intervals}
+
+$(a, b) = \{x \in \mathbb{R} : a < x < b\}$
+
+$[a, b] = \{x \in \mathbb{R} : a \leq x \leq b\}$
+
+\subsection{Set Builder Notation}
+
+\begin{center}
+$\bigcup_{n \in \mathbb{N}} A_n = \{x : x \in A_n \text{ for some } n \in \mathbb{N}\}$
+
+$\bigcap_{n \in \mathbb{N}} A_n = \{x : x \in A_n \text{ for every } n \in \mathbb{N}\}$
+\end{center}
+
+\section{Functions}
+
+A function $f$ is a rule that assigns to each element $x$ in a set $A$ exactly one element $y$ in a set $B$.
+
+\subsection{Notation}
+
+$f: A \to B$
+
+$x \mapsto f(x)$
+
+$f$ is \textit{surjective} if $\forall y \in B, \exists x \in A : f(x) = y$
+
+$f$ is \textit{injective} if $\forall x_1, x_2 \in A, f(x_1) = f(x_2) \Rightarrow x_1 = x_2$
+
+$f$ is \textit{bijective} if it is both surjective and injective
+
+\subsection{Inverse Function}
+
+If $f: A \to B$ is bijective, then the inverse function $f^{-1}: B \to A$ exists.
+
+\subsection{Composition of Functions}
+
+If $f: A \to B$ and $g: B \to C$, then the composition $g \circ f: A \to C$ is defined by $(g \circ f)(x) = g(f(x))$.
+
+\subsection{Examples}
+
+1. $f: \mathbb{R} \to \mathbb{R}, x \mapsto x^2$
+2. $f: \mathbb{R}^+ \to \mathbb{R}, x \mapsto \log x$
+3. $g: \mathbb{R} \to \mathbb{R}, x \mapsto e^x$
+4. $f: \mathbb{R} \to \mathbb{R}, x \mapsto \sin x$
+5. $f: \mathbb{Z} \to \mathbb{Z}, n \mapsto n^2$
+
+\end{document}

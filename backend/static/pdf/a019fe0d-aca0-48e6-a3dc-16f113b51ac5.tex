@@ -1,0 +1,74 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+
+\begin{document}
+
+\section{Sets}
+
+\subsection{Basic Definitions}
+
+$\mathbb{N} = \{0,1,2,\ldots\}$ \textit{natural numbers}
+
+$\mathbb{Z} = \{\ldots,-1,0,1,\ldots\}$ \textit{integers}
+
+$\mathbb{Q} = \{\frac{a}{b} : a,b \in \mathbb{Z}, b \neq 0\}$ \textit{rationals}
+
+$\mathbb{R}$ - \textit{real numbers}
+
+$\mathbb{C} = \{a+bi : a,b \in \mathbb{R}\}$ \textit{complex}
+
+$\mathbb{R}^2$ - \textit{2-dimensional real plane}
+
+$\mathbb{R}^n = \{(x_1,\ldots,x_n) : x_i \in \mathbb{R}\}$ \textit{n-dimensional space}
+
+$\mathbb{R}^\infty = \{(x_1,x_2,\ldots) : x_i \in \mathbb{R}\}$ \textit{space of infinite sequences of reals}
+
+\subsection{Set Operations}
+
+$A \cup B = \{x : x \in A \text{ or } x \in B\}$ \textit{union}
+
+$A \cap B = \{x : x \in A \text{ and } x \in B\}$ \textit{intersection}
+
+$A \setminus B = \{x \in A : x \notin B\}$ \textit{set difference}
+
+$A \triangle B = (A \setminus B) \cup (B \setminus A)$ \textit{symmetric difference}
+
+\subsection{Examples}
+
+Let $A_n = \{x_1,\ldots,x_n\}$ be an indexed family (where $n \in \mathbb{N}$).
+
+\begin{align*}
+\bigcup_{i=1}^n A_i &= \{x : x \in A_i \text{ for some } i \in \mathbb{N}\} \\
+\bigcap_{i=1}^n A_i &= \{x : x \in A_i \text{ for every } i \in \mathbb{N}\}
+\end{align*}
+
+These are generalized to arbitrary indexed families.
+
+\section{Functions}
+
+A function $f: A \rightarrow B$ is a mapping that assigns to each $a \in A$ a unique $b \in B$.
+
+$A_f = \{(a,f(a)) : a \in A\}$ is the \textit{graph} of $f$.
+
+If $f: A \rightarrow B$ is a function, then:
+
+\begin{itemize}
+    \item $f$ is \textit{injective} (1-1) if $\forall a_1, a_2 \in A, f(a_1) = f(a_2) \Rightarrow a_1 = a_2$
+    \item $f$ is \textit{surjective} (onto) if $\forall b \in B, \exists a \in A : f(a) = b$
+    \item $f$ is \textit{bijective} if it is both injective and surjective
+\end{itemize}
+
+If $f: A \rightarrow B$ is bijective, then there exists a unique function $f^{-1}: B \rightarrow A$ called the \textit{inverse of f} (denoted by $f^{-1} = f_{inv}$).
+
+\subsection{Examples of Functions}
+
+\begin{enumerate}
+    \item $f: \mathbb{R} \rightarrow \mathbb{R}, x \mapsto x^2$
+    \item $f: \mathbb{R}^2 \rightarrow \mathbb{R}, (x,y) \mapsto x+y$
+    \item $g: \mathbb{R} \rightarrow \mathbb{R}, x \mapsto e^x$
+    \item $h: \mathbb{R} \rightarrow \mathbb{R}, x \mapsto \sin x$
+    \item $f: \mathbb{C} \rightarrow \mathbb{C}, z \mapsto z^2 + 1$
+\end{enumerate}
+
+\end{document}

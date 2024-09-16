@@ -1,0 +1,114 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[margin=1in]{geometry}
+
+\begin{document}
+
+\section{Inverse Matrices}
+
+An \textit{inverse} matrix A is invertible if there is a matrix A' such that AA' = A'A = I.
+
+\subsection{Properties of Inverse Matrices}
+
+\begin{itemize}
+    \item A = $\begin{bmatrix} 2 & 3 \\ 1 & 4 \end{bmatrix}$, B = $\begin{bmatrix} 4 & -3 \\ -1 & 2 \end{bmatrix}$ are inverses
+    \item Since AB = $\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}$, we can write B = A$^{-1}$
+    \item Not all matrices have inverses
+    \item A = $\begin{bmatrix} 0 & 0 \\ 1 & 0 \end{bmatrix}$ has no inverse
+    \item AB = $\begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix}$ ≠ I
+\end{itemize}
+
+\subsection{Connection to Linear Transformations}
+
+A$^{-1}$ is the inverse transformation with respect to matrix A (or T = A's view). The inverse of T is a linear transformation whose associated matrix is A$^{-1}$.
+
+\section{2x2 Inverse Formula}
+
+Let A = $\begin{bmatrix} a & b \\ c & d \end{bmatrix}$, then if ad-bc ≠ 0:
+
+\[
+A^{-1} = \frac{1}{ad-bc} \begin{bmatrix} d & -b \\ -c & a \end{bmatrix}
+\]
+
+\textit{Check:} Show AA$^{-1}$ = I and A$^{-1}$A = I
+
+This is a special case (only works for 2x2). For larger matrices, we use more complicated methods to compute (not time efficient for now).
+
+\subsection{Using Gauss-Jordan to Find the Inverse}
+
+Suppose A has inverse A$^{-1}$
+Then AA$^{-1}$ = [A|A$^{-1}$] = [I|A$^{-1}$]
+So A$^{-1}$ = $\begin{bmatrix} 2 & 1 \\ 5 & 3 \end{bmatrix}$
+
+To find A$^{-1}$, we start with [A|I] and use row operations to transform the left side to I. The right side will become A$^{-1}$.
+
+Instead of using [AX] = [AX$_1$] ... [AX$_n$] individually, we can use [A|X$_1$...X$_n$] to solve systems of linear equations once on the matrix.
+
+If A doesn't have n pivots (one in each row), then A is not invertible.
+
+If A has n pivots, then the algorithm produces A$^{-1}$.
+
+\section{Summary: Finding Inverse Matrices}
+
+\begin{itemize}
+    \item If A doesn't have n pivots, then A$^{-1}$ doesn't exist
+    \item If A has n pivots, then the RREF of [A|I] is [I|A$^{-1}$]
+\end{itemize}
+
+\subsection{Example}
+
+Find A$^{-1}$ if it exists:
+
+A = $\begin{bmatrix} 2 & 1 & 0 \\ 0 & 1 & 2 \\ 1 & 0 & 1 \end{bmatrix}$
+
+Solution:
+
+\begin{align*}
+    \begin{bmatrix} 
+    2 & 1 & 0 & | & 1 & 0 & 0 \\
+    0 & 1 & 2 & | & 0 & 1 & 0 \\
+    1 & 0 & 1 & | & 0 & 0 & 1
+    \end{bmatrix}
+    &\xrightarrow{R_3 - \frac{1}{2}R_1}
+    \begin{bmatrix}
+    2 & 1 & 0 & | & 1 & 0 & 0 \\
+    0 & 1 & 2 & | & 0 & 1 & 0 \\
+    0 & -\frac{1}{2} & 1 & | & -\frac{1}{2} & 0 & 1
+    \end{bmatrix} \\
+    &\xrightarrow{R_3 + \frac{1}{2}R_2}
+    \begin{bmatrix}
+    2 & 1 & 0 & | & 1 & 0 & 0 \\
+    0 & 1 & 2 & | & 0 & 1 & 0 \\
+    0 & 0 & 2 & | & -\frac{1}{2} & \frac{1}{2} & 1
+    \end{bmatrix} \\
+    &\xrightarrow{R_3 \cdot \frac{1}{2}}
+    \begin{bmatrix}
+    2 & 1 & 0 & | & 1 & 0 & 0 \\
+    0 & 1 & 2 & | & 0 & 1 & 0 \\
+    0 & 0 & 1 & | & -\frac{1}{4} & \frac{1}{4} & \frac{1}{2}
+    \end{bmatrix} \\
+    &\xrightarrow{R_2 - 2R_3}
+    \begin{bmatrix}
+    2 & 1 & 0 & | & 1 & 0 & 0 \\
+    0 & 1 & 0 & | & \frac{1}{2} & \frac{1}{2} & -1 \\
+    0 & 0 & 1 & | & -\frac{1}{4} & \frac{1}{4} & \frac{1}{2}
+    \end{bmatrix} \\
+    &\xrightarrow{R_1 - R_2}
+    \begin{bmatrix}
+    2 & 0 & 0 & | & \frac{1}{2} & -\frac{1}{2} & 1 \\
+    0 & 1 & 0 & | & \frac{1}{2} & \frac{1}{2} & -1 \\
+    0 & 0 & 1 & | & -\frac{1}{4} & \frac{1}{4} & \frac{1}{2}
+    \end{bmatrix} \\
+    &\xrightarrow{R_1 \cdot \frac{1}{2}}
+    \begin{bmatrix}
+    1 & 0 & 0 & | & \frac{1}{4} & -\frac{1}{4} & \frac{1}{2} \\
+    0 & 1 & 0 & | & \frac{1}{2} & \frac{1}{2} & -1 \\
+    0 & 0 & 1 & | & -\frac{1}{4} & \frac{1}{4} & \frac{1}{2}
+    \end{bmatrix}
+\end{align*}
+
+Therefore, 
+\[
+A^{-1} = \begin{bmatrix} 
+\frac{1}{4} & -\frac{1}{4} & \frac{1}{2} \\

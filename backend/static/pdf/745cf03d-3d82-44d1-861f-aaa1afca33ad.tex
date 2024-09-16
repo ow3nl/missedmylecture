@@ -1,0 +1,101 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+
+\begin{document}
+
+\section{Set Theory}
+
+\subsection{Basic Definitions}
+
+\begin{align*}
+\mathbb{N} &= \{0,1,2,\ldots\} & \text{\textit{natural numbers}} \\
+\mathbb{Z} &= \{\ldots,-1,0,1,\ldots\} & \text{\textit{integers}} \\
+\mathbb{Q} &= \{\frac{a}{b} : a,b \in \mathbb{Z}, b \neq 0\} & \text{\textit{rationals}} \\
+\mathbb{R} &= \text{\textit{real numbers}} \\
+\mathbb{C} &= \{a + bi : a,b \in \mathbb{R}\} & \text{\textit{complex numbers}}
+\end{align*}
+
+\subsection{Set Operations}
+
+\begin{itemize}
+\item $\mathbb{R}^n = \{(x_1,\ldots,x_n) : x_i \in \mathbb{R}\}$ \textit{n-dimensional space}
+\item $\mathbb{R}^\infty = \{(x_1,x_2,\ldots) : x_i \in \mathbb{R}\}$ \textit{space of infinite sequences of reals}
+\end{itemize}
+
+\subsection{Set Relations}
+
+\begin{align*}
+A \subset B &: \text{\textit{A is a subset of B}} \\
+A \cap B &: \text{\textit{intersection}} \\
+A \cup B &: \text{\textit{union}}
+\end{align*}
+
+\begin{center}
+[Venn diagrams for $A \cap B$ and $A \cup B$]
+\end{center}
+
+\begin{align*}
+A \setminus B &= \{x \in A : x \notin B\} \\
+A \triangle B &= (A \cup B) \setminus (A \cap B) \\
+&= \text{\textit{symmetric difference}}
+\end{align*}
+
+\section{Intervals}
+
+Let $a,b \in \mathbb{R}$ with $a < b$. Then:
+
+\begin{align*}
+(a,b) &= \{x \in \mathbb{R} : a < x < b\} \\
+[a,b] &= \{x \in \mathbb{R} : a \leq x \leq b\}
+\end{align*}
+
+\section{Functions}
+
+\begin{align*}
+f: X \to Y &= \{(x,y) : x \in X, y \in Y\} \\
+A_f &= \{x \in X : (x,y) \in f \text{ for some } y \in Y\} \\
+&= \text{\textit{domain}} \\
+\bigcup_{x \in X} f(x) &= \{y : y = f(x) \text{ for some } x \in X\} \\
+&= \text{\textit{range}}
+\end{align*}
+
+\textit{These are generally:}
+\begin{itemize}
+\item $A_f = \text{domain} = \text{preimage of f}$
+\item $f(A) = \text{image of A under f}$
+\end{itemize}
+
+\textit{A map} $f: A \to B$ \textit{is called:}
+\begin{itemize}
+\item \textit{injective} if $\forall x_1, x_2 \in A$, $f(x_1) = f(x_2) \Rightarrow x_1 = x_2$
+\item \textit{surjective} if $\forall y \in B$, $\exists x \in A$ such that $f(x) = y$
+\item \textit{bijective} if $f$ is both injective and surjective
+\end{itemize}
+
+\textit{Note:} $f$ \textit{injective} $\Leftrightarrow$ $f^{-1}$ \textit{exists}
+
+$f^{-1}$ \textit{is called the inverse of} $f$.
+
+$\Delta$ \textit{is called the diagonal} (by definition) of $X$.
+
+\section{Composition of Functions}
+
+If $f: A \to B$ and $g: B \to C$, then the composition of $f$ and $g$ (denoted by $g \circ f$) is:
+
+\begin{center}
+$g \circ f: A \to C$
+\end{center}
+
+\textit{This is called the composition of} $f$ \textit{and} $g$.
+
+\subsection{Examples}
+\begin{enumerate}
+\item $f: \mathbb{R} \to \mathbb{R}$, $x \mapsto \sin x$
+\item $f: \mathbb{R}[X] \to \mathbb{R}$, $p \mapsto p(0)$
+\item $g: \mathbb{R} \to \mathbb{R}$, $x \mapsto e^x$
+\item $f: \mathbb{R} \to \mathbb{R}$, $x \mapsto \frac{1}{x}$
+\item $f: V \to V^*$, $v \mapsto (v,-)$
+\end{enumerate}
+
+\end{document}

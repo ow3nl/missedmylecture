@@ -1,0 +1,96 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+
+\begin{document}
+
+\section{Set Theory}
+
+\subsection{Basic Sets}
+
+\begin{align*}
+\mathbb{N} &= \{0, 1, 2, \ldots\} & \text{\textit{natural numbers}} \\
+\mathbb{Z} &= \{\ldots, -1, 0, 1, \ldots\} & \text{\textit{integers}} \\
+\mathbb{Q} &= \{\frac{a}{b} : a, b \in \mathbb{Z}, b \neq 0\} & \text{\textit{rationals}} \\
+\mathbb{R} &= \text{\textit{real numbers}} \\
+\mathbb{C} &= \{a + bi : a, b \in \mathbb{R}\} & \text{\textit{complex numbers}}
+\end{align*}
+
+\subsection{Set Operations}
+
+\begin{itemize}
+\item $\mathbb{R}^* = \{x \in \mathbb{R} : x \neq 0\}$ \textit{(non-zero reals)}
+\item $\mathbb{R}^+ = \{x \in \mathbb{R} : x > 0\}$ \textit{(positive reals)}
+\end{itemize}
+
+\subsection{Set Relations}
+
+\begin{align*}
+A \cup B &= \{x : x \in A \text{ or } x \in B\} \\
+A \cap B &= \{x : x \in A \text{ and } x \in B\}
+\end{align*}
+
+\textit{Venn diagrams} are provided for visual representation.
+
+\begin{align*}
+A \setminus B &= \{x \in A : x \notin B\} \\
+A \triangle B &= (A \cup B) \setminus (A \cap B)
+\end{align*}
+
+\section{Functions}
+
+Let $(a_n)_{n \in \mathbb{N}}$ be an infinite sequence (where $n \in \mathbb{N}$).
+
+\begin{align*}
+\text{Ex 1:} \quad I &: \mathbb{N} \to \mathbb{N} \\
+A_n &= \{n, n+1\}
+\end{align*}
+
+\textit{Definition}
+
+\begin{align*}
+\text{Ex 2:} \quad I &: \mathbb{R}^* \to \{x \in \mathbb{R} : x > 0\} \\
+A_x &= \{x, -x\}
+\end{align*}
+
+\textit{Domain and codomain}
+
+\begin{align*}
+\bigcup_{n \in \mathbb{N}} A_n &= \{n : n \in \mathbb{N} \text{ for some } n \in \mathbb{N}\} \\
+\bigcap_{n \in \mathbb{N}} A_n &= \{n : n \in A_n \text{ for every } n \in \mathbb{N}\}
+\end{align*}
+
+These are \textit{countable} operations.
+
+Any $f: A \to B$ is a subset (not $\in$) of $A \times B$ satisfying:
+\begin{itemize}
+\item $\forall a \in A, \exists b \in B : (a,b) \in f$
+\item If $(a,b_1) \in f$ and $(a,b_2) \in f$, then $b_1 = b_2$
+\end{itemize}
+
+\textit{Note}: If $\forall x \in X \exists A : x \in A$, then $X \subseteq A$.
+
+$f$ is called the \textit{graph} of the function (by definition).
+
+If $A' \subseteq A$, then $f|_{A'} : A' \to B$ is called the \textit{restriction} of $f$ to $A'$.
+
+\section{Function Properties}
+
+If $A' \subseteq A$, then the \textit{image} of $A'$ under $f : A \to B$ is:
+
+\[
+f(A') = \{f(a) : a \in A'\}
+\]
+
+This is called the \textit{restriction} of $f$ to $A'$ (denoted by $f|_{A'}$).
+
+\begin{enumerate}
+\item $f: \mathbb{R} \to \mathbb{R}$
+\item $f: \{x\} \to \{y\}$
+\item $f: A \setminus \{x\} \to B \setminus \{y\}$
+\item $g: B \to C$
+\item $f: \frac{1}{x} \mapsto \frac{1}{x^2}$
+\item $D: f(x) = 2f'(x)$
+\end{enumerate}
+
+\end{document}

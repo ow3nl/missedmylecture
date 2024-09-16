@@ -1,0 +1,79 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+
+\section{Sets and Definitions}
+
+\subsection{Basic Sets}
+$\mathbb{N} = \{0, 1, 2, \ldots\}$ - natural numbers \\
+$\mathbb{Z} = \{\ldots, -1, 0, 1, \ldots\}$ - integers \\
+$\mathbb{Q} = \{\frac{a}{b} : a, b \in \mathbb{Z}, b \neq 0\}$ - rationals \\
+$\mathbb{R}$ - real numbers \\
+$\mathbb{C} = \{a + bi : a, b \in \mathbb{R}\}$ - complex numbers
+
+\subsection{Set Operations}
+$\cup$ - union \\
+$\cap$ - intersection \\
+$\setminus$ - set difference \\
+$\mathbb{R}^n = \{(x_1, \ldots, x_n) : x_i \in \mathbb{R}\}$ - $n$-dimensional space
+
+$\mathbb{R}^\infty = \{(x_1, x_2, \ldots) : x_i \in \mathbb{R}\}$ - infinite-dimensional space of real sequences
+
+\subsection{Set Relations}
+$A \subset B$ - subset \\
+$A \cap B = \{x : x \in A \text{ or } x \in B\}$ - union \\
+$A \cap B = \{x : x \in A \text{ and } x \in B\}$ - intersection
+
+\begin{center}
+$A \setminus B = \{x \in A : x \notin B\}$
+\end{center}
+
+$A \triangle B = (A \setminus B) \cup (B \setminus A)$ - symmetric difference
+
+\subsection{Examples}
+Let $(a_n)_{n \in \mathbb{N}}$ be an infinite sequence (where $a_n \in \mathbb{R}$).
+
+\begin{enumerate}
+\item $I = \mathbb{N}$
+\item $A_n = [n, \infty)$
+\item $I = \mathbb{R}^+$, $A_x = (x, \infty)$
+\end{enumerate}
+
+\begin{center}
+$\bigcup_{x \in I} A_x = \{y : y \in A_x \text{ for some } x \in I\}$
+
+$\bigcap_{x \in I} A_x = \{y : y \in A_x \text{ for every } x \in I\}$
+\end{center}
+
+These are \textit{uncountable} unions/intersections.
+
+\subsection{Functions and Mappings}
+A map $f: A \to B$ is a rule that assigns to each $a \in A$ a unique $b \in B$.
+
+$f$ is \textit{surjective} (or \textit{onto}) if $\forall b \in B, \exists a \in A$ such that $f(a) = b$.
+
+$f$ is \textit{injective} (or \textit{one-to-one}) if $a_1 \neq a_2 \Rightarrow f(a_1) \neq f(a_2)$.
+
+$f$ is \textit{bijective} if it is both surjective and injective.
+
+\subsection{Inverse Functions}
+If $f: A \to B$ is bijective, then the inverse function $f^{-1}: B \to A$ exists.
+
+$(f^{-1} \circ f)(x) = x$ for all $x \in A$.
+
+This is called the \textit{restriction} of $f$ to $A'$.
+
+\subsection{Examples}
+\begin{enumerate}
+\item $f: \mathbb{R} \to \mathbb{R}, x \mapsto x^3$
+\item $f: \mathbb{R} \setminus \{0\} \to \mathbb{R}, x \mapsto \frac{1}{x}$
+\item $g: \mathbb{R} \to \mathbb{R}, x \mapsto e^x$
+\item $f: \mathbb{R} \to (0, \infty), x \mapsto e^x$
+\item $f: (-\frac{\pi}{2}, \frac{\pi}{2}) \to \mathbb{R}, x \mapsto \tan x$
+\item $D: C(\mathbb{R}) \to C(\mathbb{R}), f \mapsto f'$ - derivative
+\end{enumerate}
+
+\end{document}

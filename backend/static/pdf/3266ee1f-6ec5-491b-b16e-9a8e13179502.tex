@@ -1,0 +1,73 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+
+\section{Sets}
+
+\subsection{Definitions}
+
+$N = \{0, 1, 2, \ldots\}$ natural numbers
+
+$Z = \{\ldots, -1, 0, 1, \ldots\}$ integers
+
+$Q = \{\frac{a}{b} : a, b \in Z, b \neq 0\}$ rationals
+
+$R =$ real numbers
+
+$C = \{a + bi : a, b \in R\}$ complex numbers
+
+$i = \sqrt{-1}$ imaginary unit
+
+$R^n = \{(x_1, \ldots, x_n) : x_i \in R\}$ $n$-dimensional space
+
+$R^\infty = \{(x_1, x_2, \ldots) : x_i \in R\}$ space of infinite sequences of reals
+
+\subsection{Operations}
+
+\textit{Union}: $A \cup B = \{x : x \in A \text{ or } x \in B\}$
+
+\textit{Intersection}: $A \cap B = \{x : x \in A \text{ and } x \in B\}$
+
+\textit{Difference}: $A \setminus B = \{x \in A : x \notin B\}$
+
+\textit{Symmetric difference}: $(A \cup B) \setminus (A \cap B)$
+
+\section{Functions}
+
+Let $(A_n)_{n \in N}$ be an indexed family of sets (where $n \in N$).
+
+\begin{center}
+$\bigcup_{n \in N} A_n = \{x : x \in A_n \text{ for some } n \in N\}$
+
+$\bigcap_{n \in N} A_n = \{x : x \in A_n \text{ for every } n \in N\}$
+\end{center}
+
+These are called \textit{union} and \textit{intersection} of an indexed family.
+
+\textit{Definition}: $A_1 \to A_2$ is the set of all functions mapping from $A_1$ to $A_2$.
+
+If $A \overset{f}{\to} B$, then $f$ is an \textit{assignment} of $V \in B$ to every $a \in A$, denoted by $f(a)$.
+
+\textit{Note}: If $\forall a \in A$, there exists exactly one $b \in B$ such that $(a, b) \in f$, then $f$ is called a \textit{function} (by definition).
+
+$f$ is called the \textit{domain} (by definition) of $f$.
+
+$B$ is called the \textit{codomain} or \textit{target space} of $f$.
+
+\textit{Definition}: If $A' \subseteq A$, then the \textit{image} of $A'$ under $f$ (denoted by $f(A')$) is called the \textit{restriction} of $f$ to $A'$.
+
+\subsection{Examples}
+
+\begin{enumerate}
+    \item $f: R \to R, x \mapsto x^2$
+    \item $f: R[X] \to R, p \mapsto p(0)$
+    \item $g: R \to R, x \mapsto \frac{1}{x}$
+    \item $f: V \to V^*$
+    \item $f: V \overset{\sim}{\to} V^{**}$
+    \item $D: C^\infty(R) \to C^\infty(R), f \mapsto f'$
+\end{enumerate}
+
+\end{document}

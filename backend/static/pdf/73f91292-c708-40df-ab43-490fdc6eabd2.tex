@@ -1,0 +1,80 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+
+\begin{document}
+
+\section{Set Theory}
+
+\subsection{Sets and Notations}
+
+\begin{itemize}
+    \item $\mathbb{N} = \{0,1,2,\ldots\}$ - natural numbers
+    \item $\mathbb{Z} = \{\ldots,-1,0,1,\ldots\}$ - integers
+    \item $\mathbb{Q} = \{\frac{p}{q} : p,q \in \mathbb{Z}, q \neq 0\}$ - rationals
+    \item $\mathbb{R}$ - real numbers
+    \item $\mathbb{C} = \{a+bi : a,b \in \mathbb{R}\}$ - complex numbers
+\end{itemize}
+
+\subsection{Set Operations}
+
+\begin{itemize}
+    \item $\mathbb{R}^n = \{(x_1,\ldots,x_n) : x_i \in \mathbb{R}\}$ - $n$-dimensional space
+    \item $\mathbb{R}^\infty = \{(x_1,x_2,\ldots) : x_i \in \mathbb{R}\}$ - space of infinite sequences of reals
+\end{itemize}
+
+\subsection{Set Relations}
+
+\begin{itemize}
+    \item $A \cup B = \{x : x \in A \text{ or } x \in B\}$ - union
+    \item $A \cap B = \{x : x \in A \text{ and } x \in B\}$ - intersection
+    \item $A \setminus B = \{x \in A : x \notin B\}$ - difference
+    \item $A \triangle B = (A \setminus B) \cup (B \setminus A)$ - symmetric difference
+\end{itemize}
+
+\subsection{Properties}
+
+Let $\{A_\alpha\}_{\alpha \in I}$ be an indexed family of sets. Then:
+
+\begin{enumerate}
+    \item $I \subseteq \mathbb{N}$
+    \item $A_\alpha = \{x,y,z\}$
+    \item $I = \mathbb{R}^+$, $A_\alpha = [0,\alpha]$
+\end{enumerate}
+
+Define:
+\begin{align*}
+    \bigcup_{\alpha \in I} A_\alpha &= \{x : x \in A_\alpha \text{ for some } \alpha \in I\} \\
+    \bigcap_{\alpha \in I} A_\alpha &= \{x : x \in A_\alpha \text{ for every } \alpha \in I\}
+\end{align*}
+
+\subsection{Functions}
+
+A \textit{function} is a mapping or transformation.
+
+Let $A, B$ be sets. $f:A \to B$ means:
+\begin{itemize}
+    \item $f$ assigns to each $a \in A$ a unique $b \in B$
+    \item $a \mapsto b$ or $f(a) = b$
+\end{itemize}
+
+$f$ is \textit{surjective} if $\forall b \in B, \exists a \in A$ such that $f(a) = b$.
+
+$f$ is \textit{injective} if $a_1 \neq a_2 \implies f(a_1) \neq f(a_2)$.
+
+$f$ is \textit{bijective} if it is both surjective and injective.
+
+\subsection{Inverse Function}
+
+If $f : A \to B$ is bijective, then the \textit{inverse function} of $f$ (denoted by $f^{-1} : B \to A$) is defined by $f^{-1}(b) = a$.
+
+Examples:
+\begin{enumerate}
+    \item $f : \mathbb{R} \to \mathbb{R}$, $f(x) = x^3$
+    \item $f : \mathbb{R} \setminus \{0\} \to \mathbb{R} \setminus \{0\}$, $f(x) = \frac{1}{x}$
+    \item $g : \mathbb{R} \to \mathbb{R}$, $x \mapsto x^2$
+    \item $f : \mathbb{R} \to [0,\infty)$, $x \mapsto |x|$
+    \item $f : \mathbb{R} \to (-1,1)$, $x \mapsto \tanh(x)$
+\end{enumerate}
+
+\end{document}
